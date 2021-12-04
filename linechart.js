@@ -195,7 +195,7 @@ function LineChart(file_path) {
             .x(function(d) { return x(+d.year) })
             .y(function(d) { 
               
-              console.log (d.accuracy)
+             
               return y(+d.accuracy) 
             
             })
@@ -211,7 +211,11 @@ function LineChart(file_path) {
           .datum(data)
           .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
-            .y(function(d) { return y(+d.recall) })
+            .y(function(d) { 
+              
+              return y(+d.recall) 
+            
+            })
           )
           .attr("stroke", function(d){ return myColor2("recall") })
           //.attr("stroke", "blue")
@@ -224,7 +228,12 @@ function LineChart(file_path) {
           .datum(data)
           .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
-            .y(function(d) { return y(+d.precision) })
+            .y(function(d) { 
+              
+              console.log (d.precision)
+              return y(+d.precision) 
+            
+            })
           )
           .attr("stroke", function(d){ return myColor2("precision") })
           //.attr("stroke", "orange")
