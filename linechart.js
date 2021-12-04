@@ -112,9 +112,7 @@ function LineChart(file_path) {
       var x = d3.scaleLinear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis = d3.svg.axis()
-        .scale(x)
-        .orient("bottom")
+      const xAxis = d3.axisBottom(x)
         .tickFormat(d3.format(""));
 
       svg.append("g")
@@ -124,9 +122,7 @@ function LineChart(file_path) {
       var x2 = d3.scaleLinear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis2 = d3.svg.axis()
-        .scale(x2)
-        .orient("bottom")
+      const xAxis2 = d3.axisBottom(x2)
         .tickFormat(d3.format(""));
 
       svg2.append("g")
@@ -139,13 +135,13 @@ function LineChart(file_path) {
         .domain([0,100])
         .range([ height, 0 ]);
       svg.append("g")
-        .call(d3.svg.axis().scale(y).orient("left"));
+        .call(d3.axisLeft(y));
 
       var y2 = d3.scaleLinear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg2.append("g")
-        .call(d3.svg.axis().scale(y2).orient("left"));
+        .call(d3.axisLeft(y2));
 
 
 
@@ -154,7 +150,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.svg.line()
+          .attr("d", d3.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.danceability) })
           )
@@ -186,7 +182,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.svg.line()
+          .attr("d", d3.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.accuracy) })
           )
@@ -199,7 +195,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.svg.line()
+          .attr("d", d3.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.recall) })
           )
@@ -212,7 +208,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.svg.line()
+          .attr("d", d3.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.precision) })
           )
@@ -256,7 +252,7 @@ function LineChart(file_path) {
         line
             .transition()
             .duration(1000)
-            .attr("d", d3.svg.line()
+            .attr("d", d3.line()
               .x(function(d) { return x(+d.year) })
               .y(function(d) { 
                 if (selectedGroup == 'danceability') return y(+d.danceability)

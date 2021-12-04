@@ -214,8 +214,7 @@ function RadarChart(id, data, options, file, Identify) {
     .call(wrap, cfg.wrapWidth);
 
   //The radial line function
-  var radarLine = d3.svg.line
-    .radial()
+  var radarLine = d3.lineRadial()
     .interpolate("linear-closed")
     .radius(function (d) {
       return rScale(d.value);
