@@ -109,7 +109,7 @@ function LineChart(file_path) {
         .range(d3.schemeSet1);
   
       // Add X axis --> it is a date format
-      var x = d3.scaleLinear()
+      var x = d3.scale.linear()
         .domain([1980,2021])
         .range([ 0, width ]);
       const xAxis = d3.axisBottom(x)
@@ -119,7 +119,7 @@ function LineChart(file_path) {
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
-      var x2 = d3.scaleLinear()
+      var x2 = d3.scale.linear()
         .domain([1980,2021])
         .range([ 0, width ]);
       const xAxis2 = d3.axisBottom(x2)
@@ -131,13 +131,13 @@ function LineChart(file_path) {
   
 
       // Add Y axis
-      var y = d3.scaleLinear()
+      var y = d3.scale.linear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg.append("g")
         .call(d3.axisLeft(y));
 
-      var y2 = d3.scaleLinear()
+      var y2 = d3.scale.linear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg2.append("g")
