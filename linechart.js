@@ -147,7 +147,7 @@ function LineChart(file_path) {
         .call(d4.axisLeft(y));
 
       var y2 = d4.scaleLinear()
-        .domain([0.7,1.0])
+        .domain([0.0,1.0])
         .range([ height, 0 ]);
       svg2.append("g")
         .call(d4.axisLeft(y2));
