@@ -16,7 +16,7 @@ function LineChart(file_path) {
 
   svg
     .append('text')
-    .text('Musical Features Trend (1980-2020)')
+    .text('Musical Features Trends (1980-2021)')
     .attr('id', 'title-a')
     .attr('text-anchor', 'middle')
     .attr('transform', `translate(${margin.left + width / 2 -50}, -50)`)
@@ -48,7 +48,7 @@ function LineChart(file_path) {
 
   svg2
     .append('text')
-    .text('Model Performance Metric (1980-2020)')
+    .text('Model Performance Metric (1980-2021)')
     .attr('id', 'title-b')
     .attr('text-anchor', 'middle')
     .attr('transform', `translate(${margin.left + width / 2 - 50}, -50)`)
