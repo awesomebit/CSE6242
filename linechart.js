@@ -124,9 +124,10 @@ function LineChart(file_path) {
       var x2 = d3.scale.linear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis2 = d3.svg2.axis()
-        .scale(x2)
-        .orient("bottom")
+      const xAxis2 = d3//.svg2.axis()
+        //.scale(x2)
+        //.orient("bottom")
+        .axisBottom(x2)
         .tickFormat(d3.format(""));
 
       svg2.append("g")
