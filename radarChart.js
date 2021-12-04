@@ -215,7 +215,8 @@ function RadarChart(id, data, options, file, Identify) {
 
   //The radial line function
   var radarLine = d3.lineRadial()
-    .interpolate("linear-closed")
+    //.interpolate("linear-closed")
+    .curve(d3.curveCardinalClosed)
     .radius(function (d) {
       return rScale(d.value);
     })
@@ -224,7 +225,8 @@ function RadarChart(id, data, options, file, Identify) {
     });
 
   if (cfg.roundStrokes) {
-    radarLine.interpolate("cardinal-closed");
+    //radarLine.interpolate("cardinal-closed");
+    radarLine.curve(d3.curveCardinalClosed)
   }
 
   //Create a wrapper for the blobs
