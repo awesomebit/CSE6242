@@ -100,16 +100,16 @@ function LineChart(file_path) {
         .attr("value", function (d) { return d; }) // corresponding value returned by the button
   
       // A color scale: one color for each group
-      var myColor = d3.scale.ordinal()
+      var myColor = d3.scaleOrdinal()
         .domain(featureGroup)
         .range(d3.schemeSet2);
 
-      var myColor2 = d3.scale.ordinal()
+      var myColor2 = d3.scaleOrdinal()
         .domain(mlGroup)
         .range(d3.schemeSet1);
   
       // Add X axis --> it is a date format
-      var x = d3.scale.linear()
+      var x = d3.scaleLinear()
         .domain([1980,2021])
         .range([ 0, width ]);
       const xAxis = d3.svg.axis()
@@ -121,7 +121,7 @@ function LineChart(file_path) {
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
-      var x2 = d3.scale.linear()
+      var x2 = d3.scaleLinear()
         .domain([1980,2021])
         .range([ 0, width ]);
       const xAxis2 = d3.svg.axis()
@@ -135,13 +135,13 @@ function LineChart(file_path) {
   
 
       // Add Y axis
-      var y = d3.scale.linear()
+      var y = d3.scaleLinear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg.append("g")
         .call(d3.svg.axis().scale(y).orient("left"));
 
-      var y2 = d3.scale.linear()
+      var y2 = d3.scaleLinear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg2.append("g")
