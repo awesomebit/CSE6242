@@ -193,7 +193,12 @@ function LineChart(file_path) {
           .datum(data)
           .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
-            .y(function(d) { return y(+d.accuracy) })
+            .y(function(d) { 
+              
+              console.log (d.accuracy)
+              return y(+d.accuracy) 
+            
+            })
           )
           .attr("stroke", function(d){ return myColor2("accuracy") })
           //.attr("stroke", "red")
