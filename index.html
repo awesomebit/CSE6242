@@ -159,7 +159,7 @@
         }
       }
       function run(file, element, Identify) {
-        var path = "/data/" + file + ".csv";
+        var path = "./static/data/" + file + ".csv";
         d3.select("#yearDropdown_1").on("change", change_1);
         d3.select("#yearDropdown_2").on("change", change_2);
 
@@ -355,7 +355,7 @@
 
     <script src="linechart.js"></script>
     <script>
-      LineChart("data_linechart/linechart_data_normalized.csv");
+      LineChart("./static/data_linechart/linechart_data_normalized.csv");
     </script>
 
     </body>
