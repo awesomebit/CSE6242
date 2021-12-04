@@ -13,7 +13,7 @@ function LineChart(file_path) {
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")")
-      .style("font", "18px times")
+      .style("font", "18px")
 
   svg
     .append('text')
