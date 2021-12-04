@@ -149,11 +149,11 @@ function LineChart(file_path) {
         .call(d4.axisLeft(y));
 
       var y2 = d4.scaleLinear()
-        .domain([6,10])
+        .domain([0.6, 1.0])
         .range([ height, 0 ]);
       const yAxis2 = d4.axisLeft(y2)
         .tickFormat(function (d){
-            return d3.format(".1f")(d/10);
+            return d3.format(".1f")(d);
         })
       svg2.append("g")
         .call(yAxis2);
