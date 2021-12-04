@@ -13,7 +13,7 @@ function LineChart(file_path) {
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")")
-      .style("font", "18px arial")
+    .style("font", "18px arial")
 
   svg
     .append('text')
@@ -45,7 +45,8 @@ function LineChart(file_path) {
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
       .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+            "translate(" + margin.left + "," + margin.top + ")")
+    .style("font", "18px arial")
 
   svg2
     .append('text')
@@ -240,7 +241,7 @@ function LineChart(file_path) {
         .data(dataReady)
         .enter()
         .append("path")
-          .attr("d", function(d){ return line(d.values) } )
+          .attr("d", function(d){ return d4.line(d.values) } )
           .attr("stroke", function(d){ return myColor2(d.name) })
           .style("stroke-width", 2)
           .style("fill", "none")
