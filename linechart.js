@@ -112,8 +112,10 @@ function LineChart(file_path) {
       var x = d3.scale.linear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis = d3.axisBottom(x)
-        .tickFormat(d3.format(""));
+      const xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .ßtickFormat(d3.format(""));
 
       svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -122,8 +124,10 @@ function LineChart(file_path) {
       var x2 = d3.scale.linear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis2 = d3.axisBottom(x2)
-        .tickFormat(d3.format(""));
+      const xAxis2 = d3.svg2.axis()
+        .scale(x2)
+        .orient("bottom")
+        .ßtickFormat(d3.format(""));
 
       svg2.append("g")
         .attr("transform", "translate(0," + height + ")")
