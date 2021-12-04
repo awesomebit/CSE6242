@@ -139,13 +139,13 @@ function LineChart(file_path) {
         .domain([0,100])
         .range([ height, 0 ]);
       svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.svg.axis().scale(y).orient("left"));
 
       var y2 = d3.scale.linear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg2.append("g")
-        .call(d3.axisLeft(y2));
+        .call(d3.svg.axis().scale(y2).orient("left"));
 
 
 
