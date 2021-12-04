@@ -115,7 +115,7 @@ function LineChart(file_path) {
       const xAxis = d3.svg.axis()
         .scale(x)
         .orient("bottom")
-        .ßtickFormat(d3.format(""));
+        .tickFormat(d3.format(""));
 
       svg.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -127,7 +127,7 @@ function LineChart(file_path) {
       const xAxis2 = d3.svg2.axis()
         .scale(x2)
         .orient("bottom")
-        .ßtickFormat(d3.format(""));
+        .tickFormat(d3.format(""));
 
       svg2.append("g")
         .attr("transform", "translate(0," + height + ")")
