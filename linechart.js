@@ -193,7 +193,6 @@ function LineChart(file_path) {
 
 
       /*****************************************Second Graph******************************************/
-      /*
       var line2 = svg2
         .append('g')
         .append("path")
@@ -232,8 +231,10 @@ function LineChart(file_path) {
           //.attr("stroke", "orange")
           .style("stroke-width", 2)
           .style("fill", "none")
-      */
-         // Add the lines
+
+
+      // Add the lines
+      /*
       var line2 = d4.line()
         .x(function(d) { return x(+d.year) })
         .y(function(d) { return y(+d.value) })
@@ -245,6 +246,7 @@ function LineChart(file_path) {
           .attr("stroke", function(d){ return myColor2(d.name) })
           .style("stroke-width", 2)
           .style("fill", "none")
+      */
 
       // circles
       svg2
