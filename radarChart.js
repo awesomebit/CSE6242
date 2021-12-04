@@ -44,7 +44,7 @@ function RadarChart(id, data, options, file, Identify) {
     angleSlice = (Math.PI * 2) / total; //The width in radians of each "slice"
 
   //Scale for the radius
-  var rScale = d3.scale.linear().range([0, radius]).domain([0, maxValue]);
+  var rScale = d3.scaleLinear().range([0, radius]).domain([0, maxValue]);
 
   //Remove whatever chart with the same id/class was present before
   d3.select(id).select("svg").remove();
