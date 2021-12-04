@@ -84,7 +84,7 @@ function LineChart(file_path) {
       var dataReady = mlGroup.map( function(grpName) { // .map allows to do something for each element of the list
         return {
           name: grpName,
-          values: data.products.map(function(d) {
+          values: data.map(function(d) {
             return {year: d.year, value: +d[grpName]};
           })
         };
