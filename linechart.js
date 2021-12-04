@@ -80,7 +80,7 @@ function LineChart(file_path) {
 
   
   //Read the data
-  //var file_path = "static/linechart_data_normalized.csv";
+  //var file_path = "static/linechart_data.csv";
   d4.csv(file_path, function(data) {
   
       // List of groups (here I have one group per column)
