@@ -1,6 +1,6 @@
 function LineChart(file_path) {
   // set the dimensions and margins of the graph
-  var margin = {top: 180, right: 100, bottom: 50, left: 100},
+  var margin = {top: 80, right: 100, bottom: 50, left: 100},
   width = 1200 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
   
@@ -19,8 +19,9 @@ function LineChart(file_path) {
     .text('Musical Features Trend (1980-2020)')
     .attr('id', 'title-a')
     .attr('text-anchor', 'middle')
-    .attr('transform', `translate(${margin.left + width / 2}, -50)`)
-    .style('font-size', '24px');
+    .attr('transform', `translate(${margin.left + width / 2 -50}, -50)`)
+    .style('font-size', '24px')
+    .style('font-weight', 'bold')
 
   svg.append("text")
     .attr("class", "x label")
@@ -50,8 +51,9 @@ function LineChart(file_path) {
     .text('ML Model Analysis (1980-2020)')
     .attr('id', 'title-b')
     .attr('text-anchor', 'middle')
-    .attr('transform', `translate(${margin.left + width / 2}, -50)`)
-    .style('font-size', '24px');
+    .attr('transform', `translate(${margin.left + width / 2 - 50}, -50)`)
+    .style('font-size', '24px')
+    .style('font-weight', 'bold')
 
   svg2.append("text")
     .attr("class", "x label")
