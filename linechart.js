@@ -13,7 +13,7 @@ function LineChart(file_path) {
     .append("g")
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")")
-      .style("font", "18px")
+      .style("font", "18px arial")
 
   svg
     .append('text')
@@ -233,10 +233,10 @@ function LineChart(file_path) {
           .style("fill", "none")
       */
          // Add the lines
-      var line2 = d3.line()
+      var line2 = d4.line()
         .x(function(d) { return x(+d.year) })
         .y(function(d) { return y(+d.value) })
-      svg.selectAll("myLines")
+      svg2.selectAll("myLines")
         .data(dataReady)
         .enter()
         .append("path")
