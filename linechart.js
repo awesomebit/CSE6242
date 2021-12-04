@@ -1,6 +1,6 @@
 function LineChart(file_path) {
   // set the dimensions and margins of the graph
-  var margin = {top: 80, right: 100, bottom: 50, left: 100},
+  var margin = {top: 180, right: 100, bottom: 50, left: 100},
   width = 1200 - margin.left - margin.right,
   height = 400 - margin.top - margin.bottom;
   
