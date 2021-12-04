@@ -33,7 +33,7 @@ function LineChart(file_path) {
 
   svg.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - 60)
+    .attr("y", 0 - 50)
     .attr("x",0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
@@ -66,7 +66,7 @@ function LineChart(file_path) {
 
   svg2.append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", 0 - 40)
+    .attr("y", 0 - 50)
     .attr("x",0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
