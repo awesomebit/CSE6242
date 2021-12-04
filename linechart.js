@@ -100,11 +100,11 @@ function LineChart(file_path) {
         .attr("value", function (d) { return d; }) // corresponding value returned by the button
   
       // A color scale: one color for each group
-      var myColor = d3.scaleOrdinal()
+      var myColor = d3.scale.ordinal()
         .domain(featureGroup)
         .range(d3.schemeSet2);
 
-      var myColor2 = d3.scaleOrdinal()
+      var myColor2 = d3.scale.ordinal()
         .domain(mlGroup)
         .range(d3.schemeSet1);
   
