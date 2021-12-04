@@ -208,12 +208,12 @@
             "instrumentalness",
           ];
           //Define Scale
-          let tempoScale = d3.scale.linear().domain([50, 150]).range([0, 100]);
-          let loudScale = d3.scale.linear().domain([0, 23]).range([0, 100]);
-          let energyScale = d3.scale.linear().domain([0, 1]).range([0, 100]);
-          let danceScale = d3.scale.linear().domain([0, 1]).range([0, 100]);
-          let valanceScale = d3.scale.linear().domain([0, 1]).range([0, 100]);
-          let speechScale = d3.scale.linear().domain([0, 0.5]).range([0, 100]);
+          let tempoScale = d3.scaleLinear().domain([50, 150]).range([0, 100]);
+          let loudScale = d3.scaleLinear().domain([0, 23]).range([0, 100]);
+          let energyScale = d3.scaleLinear().domain([0, 1]).range([0, 100]);
+          let danceScale = d3.scaleLinear().domain([0, 1]).range([0, 100]);
+          let valanceScale = d3.scaleLinear().domain([0, 1]).range([0, 100]);
+          let speechScale = d3.scaleLinear().domain([0, 0.5]).range([0, 100]);
           let durationScale = d3.scale
             .linear()
             .domain([90000, 688453])
