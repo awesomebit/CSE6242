@@ -262,12 +262,12 @@ function LineChart(file_path) {
           .attr("r", 3)
 
       // legend
-      svg2.append("circle").attr("cx",width).attr("cy",30).attr("r", 4).style("fill", d4.schemeSet1[0])
-      svg2.append("circle").attr("cx",width).attr("cy",60).attr("r", 4).style("fill", d4.schemeSet1[1])
-      svg2.append("circle").attr("cx",width).attr("cy",90).attr("r", 4).style("fill", d4.schemeSet1[2])
-      svg2.append("text").attr("x", width+5).attr("y", 230).text("Accuracy").style("font-size", "15px").attr("alignment-baseline","middle")
-      svg2.append("text").attr("x", width+5).attr("y", 260).text("Recall").style("font-size", "15px").attr("alignment-baseline","middle")
-      svg2.append("text").attr("x", width+5).attr("y", 290).text("Precision").style("font-size", "15px").attr("alignment-baseline","middle")
+      svg2.append("circle").attr("cx",width).attr("cy",180).attr("r", 4).style("fill", d4.schemeSet1[0])
+      svg2.append("circle").attr("cx",width).attr("cy",210).attr("r", 4).style("fill", d4.schemeSet1[1])
+      svg2.append("circle").attr("cx",width).attr("cy",240).attr("r", 4).style("fill", d4.schemeSet1[2])
+      svg2.append("text").attr("x", width+5).attr("y", 180).text("Accuracy").style("font-size", "15px").attr("alignment-baseline","middle")
+      svg2.append("text").attr("x", width+5).attr("y", 210).text("Recall").style("font-size", "15px").attr("alignment-baseline","middle")
+      svg2.append("text").attr("x", width+5).attr("y", 240).text("Precision").style("font-size", "15px").attr("alignment-baseline","middle")
 
 
       /***********************************************************************************/
