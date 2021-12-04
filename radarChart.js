@@ -44,7 +44,7 @@ function RadarChart(id, data, options, file, Identify) {
     angleSlice = (Math.PI * 2) / total; //The width in radians of each "slice"
 
   //Scale for the radius
-  var rScale = d3.scaleLinear().range([0, radius]).domain([0, maxValue]);
+  var rScale = d3.scale.linear().range([0, radius]).domain([0, maxValue]);
 
   //Remove whatever chart with the same id/class was present before
   d3.select(id).select("svg").remove();
@@ -214,9 +214,9 @@ function RadarChart(id, data, options, file, Identify) {
     .call(wrap, cfg.wrapWidth);
 
   //The radial line function
-  var radarLine = d3.lineRadial()
-    //.interpolate("linear-closed")
-    .curve(d3.curveCardinalClosed)
+  var radarLine = d3.svg.line
+    .radial()
+    .interpolate("linear-closed")
     .radius(function (d) {
       return rScale(d.value);
     })
@@ -225,8 +225,7 @@ function RadarChart(id, data, options, file, Identify) {
     });
 
   if (cfg.roundStrokes) {
-    //radarLine.interpolate("cardinal-closed");
-    radarLine.curve(d3.curveCardinalClosed)
+    radarLine.interpolate("cardinal-closed");
   }
 
   //Create a wrapper for the blobs

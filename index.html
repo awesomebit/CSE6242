@@ -17,7 +17,7 @@
     />
 
     <!-- D3 & P5 -->
-    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="./static/lib/d3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./p5/p5.js"></script>
     <script type="text/javascript" src="./p5/addons/p5.sound.js"></script>
   </head>
@@ -159,7 +159,7 @@
         }
       }
       function run(file, element, Identify) {
-        var path = "./static/data/" + file + ".csv";
+        var path = "/data/" + file + ".csv";
         d3.select("#yearDropdown_1").on("change", change_1);
         d3.select("#yearDropdown_2").on("change", change_2);
 
@@ -208,16 +208,18 @@
             "instrumentalness",
           ];
           //Define Scale
-          let tempoScale = d3.scaleLinear().domain([50, 150]).range([0, 100]);
-          let loudScale = d3.scaleLinear().domain([0, 23]).range([0, 100]);
-          let energyScale = d3.scaleLinear().domain([0, 1]).range([0, 100]);
-          let danceScale = d3.scaleLinear().domain([0, 1]).range([0, 100]);
-          let valanceScale = d3.scaleLinear().domain([0, 1]).range([0, 100]);
-          let speechScale = d3.scaleLinear().domain([0, 0.5]).range([0, 100]);
-          let durationScale = d3.scaleLinear()
+          let tempoScale = d3.scale.linear().domain([50, 150]).range([0, 100]);
+          let loudScale = d3.scale.linear().domain([0, 23]).range([0, 100]);
+          let energyScale = d3.scale.linear().domain([0, 1]).range([0, 100]);
+          let danceScale = d3.scale.linear().domain([0, 1]).range([0, 100]);
+          let valanceScale = d3.scale.linear().domain([0, 1]).range([0, 100]);
+          let speechScale = d3.scale.linear().domain([0, 0.5]).range([0, 100]);
+          let durationScale = d3.scale
+            .linear()
             .domain([90000, 688453])
             .range([0, 100]);
-          let InstrumentScale = d3.scaleLinear()
+          let InstrumentScale = d3.scale
+            .linear()
             .domain([0, 0.09])
             .range([0, 100]);
 
@@ -309,7 +311,7 @@
             ],
           ];
 
-          var color = d3.scaleOrdinal().range(["#00A0B0", "#CC333F"]);
+          var color = d3.scale.ordinal().range(["#00A0B0", "#CC333F"]);
           var radarChartOptions = {
             w: r_width / 1.2,
             h: r_height / 1.2,
@@ -353,7 +355,7 @@
 
     <script src="linechart.js"></script>
     <script>
-      LineChart("./static/data_linechart/linechart_data_normalized.csv");
+      LineChart("data_linechart/linechart_data_normalized.csv");
     </script>
 
     </body>
