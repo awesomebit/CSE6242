@@ -6,7 +6,7 @@ function LineChart(file_path) {
   
   
   // append the svg object to the body of the page
-  var svg = d3.select("#myFeatureGraph")
+  var svg = d4.select("#myFeatureGraph")
     .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -37,7 +37,7 @@ function LineChart(file_path) {
     .attr("transform", "rotate(-90)")
     .text("Features");
 
-  var svg2 = d3.select("#myMlGraph")
+  var svg2 = d4.select("#myMlGraph")
     .append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
@@ -72,7 +72,7 @@ function LineChart(file_path) {
   
   //Read the data
   //var file_path = "static/linechart_data_normalized.csv";
-  d3.csv(file_path, function(data) {
+  d4.csv(file_path, function(data) {
   
       // List of groups (here I have one group per column)
       var featureGroup = ['danceability','energy','key','loudness','mode','speechiness','acousticness',
@@ -91,7 +91,7 @@ function LineChart(file_path) {
       });
   
       // add the options to the button
-      d3.select("#selectButton")
+      d4.select("#selectButton")
         .selectAll('myOptions')
            .data(featureGroup)
         .enter()
@@ -100,30 +100,30 @@ function LineChart(file_path) {
         .attr("value", function (d) { return d; }) // corresponding value returned by the button
   
       // A color scale: one color for each group
-      var myColor = d3.scaleOrdinal()
+      var myColor = d4.scaleOrdinal()
         .domain(featureGroup)
-        .range(d3.schemeSet2);
+        .range(d4.schemeSet2);
 
-      var myColor2 = d3.scaleOrdinal()
+      var myColor2 = d4.scaleOrdinal()
         .domain(mlGroup)
-        .range(d3.schemeSet1);
+        .range(d4.schemeSet1);
   
       // Add X axis --> it is a date format
-      var x = d3.scaleLinear()
+      var x = d4.scaleLinear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis = d3.axisBottom(x)
-        .tickFormat(d3.format(""));
+      const xAxis = d4.axisBottom(x)
+        .tickFormat(d4.format(""));
 
       svg.append("g")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
-      var x2 = d3.scaleLinear()
+      var x2 = d4.scaleLinear()
         .domain([1980,2021])
         .range([ 0, width ]);
-      const xAxis2 = d3.axisBottom(x2)
-        .tickFormat(d3.format(""));
+      const xAxis2 = d4.axisBottom(x2)
+        .tickFormat(d4.format(""));
 
       svg2.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -131,17 +131,17 @@ function LineChart(file_path) {
   
 
       // Add Y axis
-      var y = d3.scaleLinear()
+      var y = d4.scaleLinear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d4.axisLeft(y));
 
-      var y2 = d3.scaleLinear()
+      var y2 = d4.scaleLinear()
         .domain([0,100])
         .range([ height, 0 ]);
       svg2.append("g")
-        .call(d3.axisLeft(y2));
+        .call(d4.axisLeft(y2));
 
 
 
@@ -150,7 +150,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.line()
+          .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.danceability) })
           )
@@ -182,7 +182,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.line()
+          .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.accuracy) })
           )
@@ -195,7 +195,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.line()
+          .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.recall) })
           )
@@ -208,7 +208,7 @@ function LineChart(file_path) {
         .append('g')
         .append("path")
           .datum(data)
-          .attr("d", d3.line()
+          .attr("d", d4.line()
             .x(function(d) { return x(+d.year) })
             .y(function(d) { return y(+d.precision) })
           )
@@ -234,9 +234,9 @@ function LineChart(file_path) {
           .attr("r", 3)
 
       // legend
-      svg2.append("circle").attr("cx",width).attr("cy",30).attr("r", 4).style("fill", d3.schemeSet1[0])
-      svg2.append("circle").attr("cx",width).attr("cy",60).attr("r", 4).style("fill", d3.schemeSet1[1])
-      svg2.append("circle").attr("cx",width).attr("cy",90).attr("r", 4).style("fill", d3.schemeSet1[2])
+      svg2.append("circle").attr("cx",width).attr("cy",30).attr("r", 4).style("fill", d4.schemeSet1[0])
+      svg2.append("circle").attr("cx",width).attr("cy",60).attr("r", 4).style("fill", d4.schemeSet1[1])
+      svg2.append("circle").attr("cx",width).attr("cy",90).attr("r", 4).style("fill", d4.schemeSet1[2])
       svg2.append("text").attr("x", width+5).attr("y", 30).text("Accuracy").style("font-size", "15px").attr("alignment-baseline","middle")
       svg2.append("text").attr("x", width+5).attr("y", 60).text("Recall").style("font-size", "15px").attr("alignment-baseline","middle")
       svg2.append("text").attr("x", width+5).attr("y", 90).text("Precision").style("font-size", "15px").attr("alignment-baseline","middle")
@@ -252,7 +252,7 @@ function LineChart(file_path) {
         line
             .transition()
             .duration(1000)
-            .attr("d", d3.line()
+            .attr("d", d4.line()
               .x(function(d) { return x(+d.year) })
               .y(function(d) { 
                 if (selectedGroup == 'danceability') return y(+d.danceability)
@@ -305,11 +305,11 @@ function LineChart(file_path) {
       }
   
       // When the button is changed, run the updateChart function
-      d3.select("#selectButton").on("change", function(d) {
+      d4.select("#selectButton").on("change", function(d) {
 
 
           // recover the option that has been chosen
-          var selectedOption = d3.select(this).property("value")
+          var selectedOption = d4.select(this).property("value")
           console.log(selectedOption)
           // run the updateChart function with this selected option
           update(selectedOption)
