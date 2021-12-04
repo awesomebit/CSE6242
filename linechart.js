@@ -149,8 +149,12 @@ function LineChart(file_path) {
       var y2 = d4.scaleLinear()
         .domain([0.6,1.0])
         .range([ height, 0 ]);
+      const yAxis2 = d4.axisLeft(y2)
+        .tickFormat(function (d){
+            return d3.format(".1f")(d/10);
+        })
       svg2.append("g")
-        .call(d4.axisLeft(y2));
+        .call(yAxis2);
 
 
 
