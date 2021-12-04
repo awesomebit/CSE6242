@@ -51,9 +51,11 @@ function LineChart(file_path) {
   svg2
     .append('text')
     .text('Model Performance Metric (1980-2021)')
-    .attr('id', 'title-b')
-    .attr('text-anchor', 'middle')
-    .attr('transform', `translate(${margin.left + width / 2 - 50}, -50)`)
+    .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
     .style('font-size', '24px')
     .style('font-weight', 'bold')
 
