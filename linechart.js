@@ -241,7 +241,7 @@ function LineChart(file_path) {
         .data(dataReady)
         .enter()
         .append("path")
-          .attr("d", function(d){ return d4.line(d.values) } )
+          .attr("d", function(d){ return line2(d.values) } )
           .attr("stroke", function(d){ return myColor2(d.name) })
           .style("stroke-width", 2)
           .style("fill", "none")
