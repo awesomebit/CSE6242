@@ -150,8 +150,8 @@ function LineChart(file_path) {
 
       
       var y2 = d4.scaleLinear()
-        .domain([70, 100])
-        .range([ 400, 0 ]);
+        .domain([0, 100])
+        .range([ height, 0 ]);
       const yAxis2 = d4.axisLeft(y2)
       svg2.append("g")
         .call(yAxis2);
