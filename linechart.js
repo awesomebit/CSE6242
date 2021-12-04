@@ -36,7 +36,7 @@ function LineChart(file_path) {
     .attr("y", 6)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .text("Features");
+    .text("Normalized features");
 
   var svg2 = d4.select("#myMlGraph")
     .append("svg")
@@ -48,7 +48,7 @@ function LineChart(file_path) {
 
   svg2
     .append('text')
-    .text('ML Model Analysis (1980-2020)')
+    .text('Model Performance Metric (1980-2020)')
     .attr('id', 'title-b')
     .attr('text-anchor', 'middle')
     .attr('transform', `translate(${margin.left + width / 2 - 50}, -50)`)
@@ -62,6 +62,13 @@ function LineChart(file_path) {
     .attr("y", height + 40)
     .text("Years");
 
+  svg2.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", 6)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("Performance metric (%)");
 
   // legend setup
   var legend2 = svg2
