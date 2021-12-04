@@ -147,7 +147,7 @@ function LineChart(file_path) {
         .call(d4.axisLeft(y));
 
       var y2 = d4.scaleLinear()
-        .domain([0.6,1.0])
+        .domain([6,10])
         .range([ height, 0 ]);
       const yAxis2 = d4.axisLeft(y2)
         .tickFormat(function (d){
