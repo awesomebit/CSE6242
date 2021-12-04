@@ -55,7 +55,8 @@ function RadarChart(id, data, options, file, Identify) {
     .append("svg")
     .attr("width", cfg.w + cfg.margin.left + cfg.margin.right)
     .attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
-    .attr("class", "radar" + id);
+    .attr("class", "radar" + id)
+    .style("font", "18px arial");
 
   var title = svg
     .append("text")
