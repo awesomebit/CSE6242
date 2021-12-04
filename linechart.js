@@ -141,13 +141,13 @@ function LineChart(file_path) {
 
       // Add Y axis
       var y = d4.scaleLinear()
-        .domain([0,1])
+        .domain([0,100])
         .range([ height, 0 ]);
       svg.append("g")
         .call(d4.axisLeft(y));
 
       var y2 = d4.scaleLinear()
-        .domain([0,100])
+        .domain([0,1])
         .range([ height, 0 ]);
       svg2.append("g")
         .call(d4.axisLeft(y2));
